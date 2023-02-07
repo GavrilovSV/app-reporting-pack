@@ -1,0 +1,14 @@
+#  docker-compose для локальной разработки
+version: "2.4"
+services:
+  uac-arp:
+    container_name: uac_arp_synchronizer
+    image: app-reporting-pack
+    environment:
+      - VAULT_CLIENT_URI=https://hv.tools.vizor-games.com
+      - VAULT_CLIENT_TOKEN=hvs.CAESICcB5QY_pv4eMmjmf6DSEXs3P9zyq4a3kfFG6rjRMSSLGh4KHGh2cy5OV0xRenlpUFZnaGIzc2dLNGFIaTB1Mm4
+      - ENVIRONMENT=dev
+      - SERVICE_ACCOUNT_SECRET=secrets.uac-report-pack-actualizer.credentials
+    volumes:
+      - "C:/Users/37529/IdeaProjects/app-reporting-pack/google-ads.yaml:/google-ads.yaml"
+      - "C:/Users/37529/IdeaProjects/app-reporting-pack/app_reporting_pack.yaml:/app_reporting_pack.yaml"
